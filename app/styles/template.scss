@@ -1,5 +1,20 @@
-//
+// Variables
+$color-base: #000;
+$color-title: #0c0c0c;
+$color-title-lite: #333;
+$color-lite: #828282;
 $color-link: #57ab27;
+$color-link-hover: #4d9b21;
+$color-error: #f00;
+
+// Mixins
+@mixin card {
+    padding: 50px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+}
+
 
 //
 html {
@@ -12,10 +27,11 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
-    color: #000;
+    color: $color-base;
     height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
     background-color: #f5f5f5;
 }
 
@@ -34,7 +50,7 @@ h1 {
     font-size: 20px;
     line-height: 26px;
     font-weight: 700;
-    color: #000;
+    color: $color-base;
     margin: 0 0 22px;
     padding: 0;
 }
@@ -44,11 +60,11 @@ h1 a, h1 a:hover, h1 a:focus {
 }
 
 h2 {
-    color: #0c0c0c;
     font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
+    color: $color-title;
     margin: 0 0 22px;
     padding: 0;
 }
@@ -58,7 +74,7 @@ h2 a, h2 a:hover, h2 a:focus {
 }
 
 h3 {
-    color: #0c0c0c;
+    color: $color-title;
     font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 20px;
     line-height: 24px;
@@ -77,6 +93,10 @@ ol, ul {
 
 li {
     line-height: 30px;
+}
+
+.symbol-rub {
+    font-family: 'PT Sans', Tahoma, Arial, sans-serif;
 }
 
 ::-moz-selection {
@@ -101,9 +121,11 @@ li {
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
+    width: 100%;
     height: 50px;
     padding: 0 22px;
     vertical-align: middle;
+    display: block;
     border:none;
     border-radius: 25px;
     background-color: $color-link;
@@ -111,19 +133,19 @@ li {
 
     &:hover {
         color: #fff;
-        background-color: #4d9b21;
+        background-color: $color-link-hover;
         box-shadow: none;
     }
 
     &:focus {
         color: #fff;
-        background-color: #4d9b21;
+        background-color: $color-link-hover;
         box-shadow: none;
     }
 
     &:active {
         color: #fff;
-        background-color: #4d9b21;
+        background-color: $color-link-hover;
         box-shadow: none;
     }
 }
@@ -163,13 +185,22 @@ input[type="color"] {
     border-radius: 3px;
 
     &:hover {
-        color: #0c0c0c;
-        border-color: #57ab27;
+        color: $color-title;
+        border-color: $color-link;
     }
 
     &:focus {
-        border-color: #57ab27;
+        border-color: $color-link;
         outline: 0;
+    }
+
+    &[required] {
+        color: $color-link;
+
+        &:after {
+            content: '*';
+            display: block;
+        }
     }
 }
 
@@ -211,7 +242,7 @@ textarea {
     font-size: 14px;
     line-height: 18px;
     font-weight: 500;
-    color: #000;
+    color: $color-base;
     padding: 24px 0;
     border-bottom: 1px solid #e0e0e0;
 
@@ -297,7 +328,7 @@ textarea {
         font-size: 14px;
         line-height: 16px;
         font-weight: 700;
-        color: #57ab27;
+        color: $color-link;
         margin-bottom: 27px;
     }
 
@@ -324,7 +355,7 @@ textarea {
         font-size: 16px;
         font-weight: 400;
         line-height: 19px;
-        color: #000;
+        color: $color-base;
         padding-bottom: 20px;
         display: inline-block;
         vertical-align: top;
@@ -345,7 +376,7 @@ textarea {
         font-size: 16px;
         font-weight: 700;
         line-height: 21px;
-        color: #000;
+        color: $color-base;
     }
 
     &__descr {
@@ -353,22 +384,23 @@ textarea {
         font-size: 14px;
         font-weight: 400;
         line-height: 17px;
-        color: #0c0c0c;
+        color: $color-title;
     }
 }
 
 .auditory-program {
-    height: 300px;
+    height: 390px;
     overflow: hidden;
 }
 
 .auditory-program-item {
+    @include card;
+
     width: 40%;
-    margin: 0 20px 20px 0;
+    margin: 5px 20px 20px 0;
     padding: 30px 40px;
     position: relative;
     float: left;
-    background: #fff;
 
     &__title {
         font-family: 'Roboto Slab', 'Times New Roman', serif;
@@ -377,7 +409,9 @@ textarea {
         line-height: 37px;
         color: $color-link;
         margin-bottom: 10px;
+        padding-right: 40px;
         position: relative;
+        word-break: break-all;
     }
 
     &__day {
@@ -385,7 +419,7 @@ textarea {
         font-size: 15px;
         font-weight: 400;
         line-height: 17px;
-        color: #828282;
+        color: $color-lite;
         position: absolute;
         bottom: 4px;
         right: 0;
@@ -405,10 +439,47 @@ textarea {
 
 .auditory-video {
     padding: 40px 0;
+
+    &__logos {
+
+    }
+
+    &__logo-link {
+        text-decoration: none;
+        margin: 0 10px 6px 0;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-align: center;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    &__link-img {
+        max-width: 190px;
+    }
 }
 
 .auditory-testimonials {
     padding: 40px 0;
+
+    &__item {
+        width: 45%;
+        margin: 0 20px 20px 0;
+        position: relative;
+        float: left;
+    }
+}
+
+.auditory-tarifs { // .tarif
+    padding: 40px 0;
+
+    &__tarif {
+        //width: 45%;
+        //margin: 0 15px 15px 0;
+    }
 }
 
 .auditory-register {
@@ -417,10 +488,23 @@ textarea {
 
 .auditory-contacts {
     padding: 40px 0;
+
+    &__card { // .contacts-card
+
+    }
+    
+    &__map { // .contacts-map
+        height: 440px;
+    }
 }
 
 .auditory-footer {
     padding: 40px 0;
+    background: #eee;
+
+    &__social { // .c-social
+
+    }
 }
 
 
@@ -432,7 +516,7 @@ textarea {
     &__link {
         font-size: 16px;
         line-height: 20px;
-        color: #000;
+        color: $color-base;
         text-decoration: none;
         margin-left: 10px;
         display: inline-block;
@@ -481,11 +565,285 @@ textarea {
         font-size: 25px;
         font-weight: 700;
         line-height: 29px;
-        color: #000;
+        color: $color-base;
         text-decoration: none;
     }
 }
 
+//
+.testimonial {
+    @include card;
+
+    &__top {
+        width: 100%;
+        display: table;
+        margin-bottom: 16px;
+    }
+
+    &__avatar {
+        width: 10%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__info {
+        width: 90%;
+        padding-left: 20px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__name {
+        font-family: 'Roboto Slab', 'Times New Roman', serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 21px;
+        color: $color-base;
+        margin-bottom: 5px;
+    }
+
+    &__descr {
+        font-family: 'Roboto Slab', 'Times New Roman', serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 17px;
+        color: $color-lite;
+        margin-bottom: 4px;
+    }
+
+    &__link {
+        width: 8px;
+        height: 14px;
+        display: block;
+        text-indent: -9999px;
+        background: transparent url(../images/icon-fb.png) no-repeat 0 0;
+    }
+
+    &__text {
+        font-family: "Roboto", Tahoma, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        color: $color-base;
+    }
+
+}
+
+//
+.tarif {
+    @include card;
+
+    &__title {
+        font-family: 'Roboto Slab', 'Times New Roman', serif;
+        font-size: 30px;
+        line-height: 34px;
+        font-weight: 700;
+        color: $color-title-lite;
+        margin-bottom: 15px;
+        padding-right: 80px;
+        position: relative;
+        word-break: break-all;
+    }
+
+    &__price {
+        font-family: 'Roboto Slab', 'Times New Roman', serif;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+        color: $color-link;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__list {
+        font-family: "Roboto", Tahoma, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+        color: $color-base;
+        margin: 0 -10px 20px;
+    }
+
+    &__item {
+        padding: 20px 10px 10px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    &__register {
+        text-align: right;
+    }
+
+    &__link {
+        font-family: "Roboto", Tahoma, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 21px;
+        color: $color-link;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-link-hover;
+        }
+    }
+}
+
+//
+.auditory-form {
+    border: 20px solid $color-link;
+    padding: 40px 60px;
+    background: #f5f5f5;
+    
+    fieldset {
+        margin: 0 0 40px;
+        padding: 0;
+    }
+
+    &__group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    &__required-sign {
+        font-size: 14px;
+        line-height: 14px;
+        width: 10px;
+        text-align: center;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        user-select: none;
+    }
+
+    &__error {
+        font-family: "Roboto", Tahoma, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        color: $color-error;
+        padding: 4px 23px;
+    }
+
+}
+
+//
+.auditory-register {
+
+    &__logos {
+        width: auto;
+        margin: 120px auto 20px;
+        display: block;
+    }
+}
+
+//
+.contacts-card {
+    padding: 0 40px 40px;
+    border-radius: 3px;
+    background: #fff;
+
+    &__photo {
+        margin: 0 -40px 20px;
+        border-radius: 3px 3px 0 0;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__item {
+        font-family: 'Roboto Slab', 'Times New Roman', serif;
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 400;
+        color: $color-title;
+        min-height: 35px;
+        margin-bottom: 20px;
+        padding-left: 45px;
+        background: transparent url(../images/icon-location.png) no-repeat 0 50%;
+
+        &_address {
+            min-height: 35px;
+            background: transparent url(../images/icon-location.png) no-repeat 0 50%;
+        }
+
+        &_phone {
+            min-height: 25px;
+            background: transparent url(../images/icon-phone2.png) no-repeat 0 50%;
+        }
+
+        &_mail {
+            min-height: 18px;
+            background: transparent url(../images/icon-mail2.png) no-repeat 0 50%;
+        }
+    }
+
+    &__link {
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+//
+.c-social {
+
+    &__title {
+        font-family: "Roboto", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 15px;
+        color: #404040;
+        margin-bottom: 8px;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 15px 10px 0;
+        padding: 8px;
+        text-indent: -9999px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+
+        &_fb {
+            background: transparent url(../images/icon-fb.png) no-repeat 50% 50%;
+        }
+
+        &_vk {
+            background: $color-link url(../images/icon-vk.png) no-repeat 50% 50%;
+        }
+
+        &_instagram {
+            background: transparent url(../images/icon-instagram.png) no-repeat 50% 50%;
+        }
+    }
+}
+
+//
+.contacts-map {
+    padding: 15px;
+    background: #ececec;
+
+    &__map {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.video-cont {
+    display: none;
+    width: 80%;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    margin-top: -300px;
+    left: 50%;
+    margin-left: -40%;
+    z-index: 9;
+}
 
 /* Responsive */
 @media (min-width: 768px) {
@@ -550,7 +908,7 @@ textarea {
             font-size: 19px;
             font-weight: 500;
             line-height: 25px;
-            color: #000;
+            color: $color-base;
         }
 
         &__info-date {
@@ -641,7 +999,14 @@ textarea {
             font-size: 16px;
             font-weight: 400;
             line-height: 19px;
-            color: #000;
+            color: $color-base;
+        }
+    }
+
+    .auditory-video {
+
+        &__link-img {
+            max-width: 400px;
         }
     }
 
