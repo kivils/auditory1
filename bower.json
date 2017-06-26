@@ -1,0 +1,13 @@
+{
+  "name": "auditory1",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "normalize.css#^3.0.3",
+    "bootstrap-sass": "^3.3.6",
+    "respond": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
