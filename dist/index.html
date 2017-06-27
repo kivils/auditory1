@@ -26,12 +26,12 @@
                 <img src="images/speaker-photo-mobile.png" alt="Фото спикера" class="auditory-face__speaker-photo-mobile">
 
                 <div class="row auditory-header">
-                    <div class="col-xs-12 col-sm-3">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                         <a href="/" class="auditory-header__logo">
-                            <img src="images/auditory1-logo.png" alt="Аудитория №1">
+                            <img src="images/auditory1-logo.png" alt="Аудитория №1" class="auditory-header__logo-img" />
                         </a>
                     </div>
-                    <div class="col-xs-12 col-sm-5">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
                         <div class="auditory-header__contacts c-contacts">
                             <a href="mailto:arenda.almt@a-1.ru" class="c-contacts__link c-contacts__link_mail">arenda.almt@a-1.ru</a>
                             <a href="tel:+78001002939" class="c-contacts__link c-contacts__link_phone">8 800 100 29 39</a>
@@ -39,34 +39,68 @@
                     </div>
                 </div>
 
-                <div class="row auditory-menu">
-                    <div class="col-xs-12 col-sm-8">
+                <div class="auditory-menu-mobile visible-xs">
+                    <span class="auditory-menu-mobile__icon o-icon-open js-menu-open"></span>
+                    <span class="auditory-menu-mobile__icon o-icon-close js-menu-close"></span>
+
+                    <ul class="auditory-menu-mobile__list site-menu-mobile js-menu">
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionInfo" class="site-menu-mobile__link">О мероприятии</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionSpeaker" class="site-menu-mobile__link">О спикере</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionVideo" class="site-menu-mobile__link">Приглашение</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionTestimonials" class="site-menu-mobile__link">Отзывы</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionTarifs" class="site-menu-mobile__link">Пакеты участия</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionRegister" class="site-menu-mobile__link site-menu-mobile__link_feat">Записаться</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionPartners" class="site-menu-mobile__link">Партнеры</a>
+                        </li>
+                        <li class="site-menu-mobile__item">
+                            <a href="#sectionContacts" class="site-menu-mobile__link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row auditory-menu hidden-xs">
+                    <div class="col-xs-12 col-sm-12  col-md-12 col-lg-8">
+
                         <ul class="auditory-menu__list site-menu">
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">О мероприятии</a>
+                                <a href="#sectionInfo" class="site-menu__link">О мероприятии</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">О спикере</a>
+                                <a href="#sectionSpeaker" class="site-menu__link">О спикере</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">Приглашение</a>
+                                <a href="#sectionVideo" class="site-menu__link">Приглашение</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">Отзывы</a>
+                                <a href="#sectionTestimonials" class="site-menu__link">Отзывы</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">Пакеты участия</a>
+                                <a href="#sectionTarifs" class="site-menu__link">Пакеты участия</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link site-menu__link_feat">Записаться</a>
+                                <a href="#sectionRegister" class="site-menu__link site-menu__link_feat js-form-link">Записаться</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">Партнеры</a>
+                                <a href="#sectionPartners" class="site-menu__link">Партнеры</a>
                             </li>
                             <li class="site-menu__item">
-                                <a href="#" class="site-menu__link">Контакты</a>
+                                <a href="#sectionContacts" class="site-menu__link">Контакты</a>
                             </li>
                         </ul>
+
                     </div>
                 </div>
 
@@ -87,7 +121,7 @@
                                 Начало в 19:00
                             </div>
                             <div class="auditory-main__bottom-link">
-                                <a href="#" class="btn">Забронировать</a>
+                                <a href="#" class="btn js-form-link">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -97,7 +131,7 @@
 
         </div>
 
-        <div class="auditory-info-wr">
+        <div class="auditory-info-wr" id="sectionInfo">
 
             <div class="container">
 
@@ -130,11 +164,11 @@
                     </ul>
 
                     <div class="auditory-info__text visible-xs">
-                        Для тех, кто пользуется деньгами, независимо от их наличия или отсутствия в данный момент.
+                        <p>Для тех, кто пользуется деньгами, независимо от их наличия или отсутствия в данный момент.</p>
                     </div>
                 </div>
 
-                <div class="auditory-info">
+                <div class="auditory-info auditory-info_get js-expand-block">
                     <h3>Что вы получите после посещения</h3>
 
                     <div class="auditory-info__table">
@@ -187,87 +221,134 @@
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+
+                    <a href="#" class="auditory-info__expand js-expand-link">Что ещё вы узнаете?</a>
+
+                </div>
+
+                <div class="auditory-info visible-xs">
+                    <div class="auditory-video-mobile">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9ExFsLH-O-o?list=RDAo1VOMrEuS4" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
 
-                <div class="auditory-info">
-                    <h3>Программа мероприятия</h3>
+                <div class="auditory-info auditory-info_info visible-xs">
+                    <div class="auditory-info-mobile">
+                        <div class="auditory-info-mobile__descr">
+                            Продолжительность мастер-класса
+                            3 часа с перерывом на кофе-брейк.
+                        </div>
+                        <div class="auditory-info-mobile__link">
+                            <a href="#" class="btn js-form-link">Записаться</a>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="auditory-program">
+                <div class="auditory-info auditory-info_carousel">
+                    <h3>
+                        Программа мероприятия
+                    </h3>
 
-                        <div class="auditory-program-item">
-                            <div class="auditory-program-item__title">
-                                Брендирование
-                                <div class="auditory-program-item__day">День 1</div>
+                    <div class="auditory-program-wr">
+
+                        <div class="auditory-program js-program-carousel">
+
+                            <div class="auditory-program__list">
+                                <div class="auditory-program__item">
+                                    <div class="auditory-program-item">
+                                        <div class="auditory-program-item__title">
+                                            Брендирование
+                                            <div class="auditory-program-item__day">День 1</div>
+                                        </div>
+
+                                        <ol class="auditory-program-item__list">
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Длинное название пункта - Идейные соображения высшего порядка
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <div class="auditory-program__item">
+                                    <div class="auditory-program-item">
+                                        <div class="auditory-program-item__title">
+                                            Айдентика
+                                            <div class="auditory-program-item__day">День 1</div>
+                                        </div>
+
+                                        <ol class="auditory-program-item__list">
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Длинное название пункта - Идейные соображения высшего порядка
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <div class="auditory-program__item">
+                                    <div class="auditory-program-item">
+                                        <div class="auditory-program-item__title">
+                                            Брендирование
+                                            <div class="auditory-program-item__day">День 1</div>
+                                        </div>
+
+                                        <ol class="auditory-program-item__list">
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Длинное название пункта - Идейные соображения высшего порядка
+                                            </li>
+                                            <li class="auditory-program-item__list-item">
+                                                Название пункта
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
                             </div>
 
-                            <ol class="auditory-program-item__list">
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Длинное название пункта - Идейные соображения высшего порядка
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                            </ol>
                         </div>
 
-                        <div class="auditory-program-item">
-                            <div class="auditory-program-item__title">
-                                Айдентика
-                                <div class="auditory-program-item__day">День 1</div>
-                            </div>
+                        <div class="o-carousel-controls js-carousel-controls">
+                            <a href="#" class="o-carousel-controls__arrow o-carousel-arrow o-carousel-arrow_prev js-jcarousel-prev">&lsaquo;</a>
 
-                            <ol class="auditory-program-item__list">
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Длинное название пункта - Идейные соображения высшего порядка
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                            </ol>
-                        </div>
+                            <span class="o-carousel-controls__count">
+                                1 / 3
+                            </span>
 
-                        <div class="auditory-program-item">
-                            <div class="auditory-program-item__title">
-                                Брендирование
-                                <div class="auditory-program-item__day">День 1</div>
-                            </div>
-
-                            <ol class="auditory-program-item__list">
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Длинное название пункта - Идейные соображения высшего порядка
-                                </li>
-                                <li class="auditory-program-item__list-item">
-                                    Название пункта
-                                </li>
-                            </ol>
+                            <a href="#" class="o-carousel-controls__arrow o-carousel-arrow o-carousel-arrow_next js-jcarousel-next">&rsaquo;</a>
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
@@ -279,7 +360,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-8">
+                    <div class="col-xs-12 col-sm-8" id="sectionSpeaker">
                         <h2>Лайк, шер, Алишер</h2>
 
                         <p>
@@ -289,7 +370,7 @@
                             Идейные соображения высшего порядка, а также консультация с широким активом требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт новая модель организационной деятельности требуют определения и уточнения дальнейших направлений развития.
                         </p>
 
-                        <div class="auditory-video__logos">
+                        <div class="auditory-video__logos hidden-xs">
                             <a href="#" class="auditory-video__logo-link">
                                 <img src="images/logo-citibank.png" alt="Logo" class="auditory-video__logo-img">
                             </a>
@@ -304,16 +385,20 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4">
+
+                    <div class="col-xs-12 col-sm-4" id="sectionVideo">
                         <a href="javascript: void(0);" class="auditory-video__link js-video-link">
                             <img src="images/video-link.png" alt="video" class="auditory-video__link-img">
+                            <span class="auditory-video__link-text">
+                                Видео-приглашение
+                            </span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="auditory-testimonials">
+        <div class="auditory-testimonials" id="sectionTestimonials">
 
             <div class="container">
 
@@ -321,54 +406,124 @@
                     <div class="col-xs-12">
                         <h2>Отзывы участников</h2>
 
-                        <div class="auditory-testimonials__list">
-                            <div class="auditory-testimonials__item testimonial">
-                                <div class="testimonial__top">
-                                    <div class="testimonial__avatar">
-                                        <img src="images/avatar.png" class="testimonial__avatar-img" alt="Avatar" />
+                        <div class="auditory-testimon-wr">
+
+                            <div class="auditory-testimon js-testimonials-carousel">
+
+                                <div class="auditory-testimon__list">
+
+                                    <div class="auditory-testimon__item">
+                                        <div class="testimonial">
+                                            <div class="testimonial__top">
+                                                <div class="testimonial__avatar">
+                                                    <img src="images/avatar.png" class="testimonial__avatar-img" alt="Avatar" />
+                                                </div>
+
+                                                <div class="testimonial__info">
+                                                    <div class="testimonial__name">
+                                                        Александр Винокуров
+                                                    </div>
+
+                                                    <div class="testimonial__descr">
+                                                        Руководитель проекта
+                                                    </div>
+
+                                                    <div class="testimonial__links">
+                                                        <a href="#" class="testimonial__link testimonial__link_fb">Facebook</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial__text">
+                                                «Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации форм развития. Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке форм развития.»
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="testimonial__info">
-                                        <div class="testimonial__name">
-                                            Александр Винокуров
-                                        </div>
+                                    <div class="auditory-testimon__item">
+                                        <div class="testimonial">
+                                            <div class="testimonial__top">
+                                                <div class="testimonial__avatar">
+                                                    <img src="images/avatar.png" class="testimonial__avatar-img" alt="Avatar" />
+                                                </div>
 
-                                        <div class="testimonial__descr">
-                                            Руководитель проекта
-                                        </div>
+                                                <div class="testimonial__info">
+                                                    <div class="testimonial__name">
+                                                        Александр Винокуров
+                                                    </div>
 
-                                        <div class="testimonial__links">
-                                            <a href="#" class="testimonial__link testimonial__link_fb">Facebook</a>
+                                                    <div class="testimonial__descr">
+                                                        Руководитель проекта
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial__text">
+                                                «Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации форм развития. Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке форм развития.»
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <div class="auditory-testimon__item">
+                                        <div class="testimonial">
+                                            <div class="testimonial__top">
+                                                <div class="testimonial__avatar">
+                                                    <img src="images/avatar.png" class="testimonial__avatar-img" alt="Avatar" />
+                                                </div>
+
+                                                <div class="testimonial__info">
+                                                    <div class="testimonial__name">
+                                                        Александр Винокуров
+                                                    </div>
+
+                                                    <div class="testimonial__descr">
+                                                        Руководитель проекта
+                                                    </div>
+
+                                                    <div class="testimonial__links">
+                                                        <a href="#" class="testimonial__link testimonial__link_fb">Facebook</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial__text">
+                                                «Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации форм развития. Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке форм развития.»
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="auditory-testimon__item">
+                                        <div class="testimonial">
+                                            <div class="testimonial__top">
+                                                <div class="testimonial__avatar">
+                                                    <img src="images/avatar.png" class="testimonial__avatar-img" alt="Avatar" />
+                                                </div>
+
+                                                <div class="testimonial__info">
+                                                    <div class="testimonial__name">
+                                                        Александр Винокуров
+                                                    </div>
+
+                                                    <div class="testimonial__descr">
+                                                        Руководитель проекта
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial__text">
+                                                «Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации форм развития. Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке форм развития.»
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <div class="testimonial__text">
-                                    «Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации форм развития. Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке форм развития.»
-                                </div>
                             </div>
 
-                            <div class="auditory-testimonials__item testimonial">
-                                <div class="testimonial__top">
-                                    <div class="testimonial__avatar">
-                                        <img src="images/avatar.png" class="testimonial__avatar-img" alt="Avatar" />
-                                    </div>
+                            <a href="#" class="o-carousel-arrow o-carousel-arrow_prev js-jcarousel-prev">&lsaquo;</a>
 
-                                    <div class="testimonial__info">
-                                        <div class="testimonial__name">
-                                            Александр Винокуров
-                                        </div>
+                            <a href="#" class="o-carousel-arrow o-carousel-arrow_next js-jcarousel-next">&rsaquo;</a>
 
-                                        <div class="testimonial__descr">
-                                            Руководитель проекта
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="testimonial__text">
-                                    «Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации форм развития. Товарищи! консультация с широким активом позволяет выполнять важные задания по разработке форм развития.»
-                                </div>
-                            </div>
                         </div>
 
                     </div>
@@ -377,7 +532,7 @@
 
         </div>
 
-        <div class="auditory-tarifs">
+        <div class="auditory-tarifs" id="sectionTarifs">
 
             <div class="container">
 
@@ -385,47 +540,66 @@
                     <div class="col-xs-12">
                         <h2>Пакеты участия</h2>
 
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="auditory-tarifs__tarif tarif">
-                                    <div class="tarif__title">
-                                        Стандартный
-                                        <div class="tarif__price">
-                                            4 990 <span class="symbol-rub">₽</span>
+                        <div class="auditory-tarifs-wr">
+
+                            <div class="auditory-tarif js-tarifs-carousel">
+
+                                <div class="auditory-tarif__list">
+
+                                    <div class="auditory-tarif__item">
+                                        <div class="tarif">
+                                            <div class="tarif__title">
+                                                Стандартный
+                                                <div class="tarif__price">
+                                                    4 990 <span class="symbol-rub">₽</span>
+                                                </div>
+                                            </div>
+                                            <div class="tarif__list">
+                                                <div class="tarif__item">Место в зале</div>
+                                                <div class="tarif__item">Попкорн и пепси</div>
+                                                <div class="tarif__item">Интервью со спикером за кулисами + ответ на 1 вопрос</div>
+                                                <div class="tarif__item">Фотосессия в стиле бикини около прессвола с участниками</div>
+                                            </div>
+                                            <div class="tarif__register">
+                                                <a href="#" class="tarif__link js-form-link">Принять участие</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="tarif__list">
-                                        <div class="tarif__item">Место в зале</div>
-                                        <div class="tarif__item">Попкорн и пепси</div>
-                                        <div class="tarif__item">Интервью со спикером за кулисами + ответ на 1 вопрос</div>
-                                        <div class="tarif__item">Фотосессия в стиле бикини около прессвола с участниками</div>
-                                    </div>
-                                    <div class="tarif__register">
-                                        <a href="#" class="tarif__link">Принять участие</a>
+
+                                    <div class="auditory-tarif__item">
+                                        <div class="tarif">
+                                            <div class="tarif__title">
+                                                Полный фарш
+                                                <div class="tarif__price">
+                                                    14 990 <span class="symbol-rub">₽</span>
+                                                </div>
+                                            </div>
+                                            <div class="tarif__list">
+                                                <div class="tarif__item">Забронированное место в первом ряду</div>
+                                                <div class="tarif__item">Шведский стол + горячительные напитки</div>
+                                                <div class="tarif__item">Приглашение на закрытый круглый стол + ночное afterparty</div>
+                                                <div class="tarif__item">Возможность коллаборации с партнерами мероприятия +
+                                                    проведение кейтеринга + финансовая консультация от специалистов</div>
+                                            </div>
+                                            <div class="tarif__register">
+                                                <a href="#" class="tarif__link js-form-link">Принять участие</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
 
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="auditory-tarifs__tarif tarif">
-                                    <div class="tarif__title">
-                                        Полный фарш
-                                        <div class="tarif__price">
-                                            14 990 <span class="symbol-rub">₽</span>
-                                        </div>
-                                    </div>
-                                    <div class="tarif__list">
-                                        <div class="tarif__item">Забронированное место в первом ряду</div>
-                                        <div class="tarif__item">Шведский стол + горячительные напитки</div>
-                                        <div class="tarif__item">Приглашение на закрытый круглый стол + ночное afterparty</div>
-                                        <div class="tarif__item">Возможность коллаборации с партнерами мероприятия +
-                                            проведение кейтеринга + финансовая консультация от специалистов</div>
-                                    </div>
-                                    <div class="tarif__register">
-                                        <a href="#" class="tarif__link">Принять участие</a>
-                                    </div>
-                                </div>
+                            <div class="o-carousel-controls js-carousel-controls">
+                                <a href="#" class="o-carousel-controls__arrow o-carousel-arrow o-carousel-arrow_prev js-jcarousel-prev">&lsaquo;</a>
+
+                            <span class="o-carousel-controls__count">
+                                1 / 3
+                            </span>
+
+                                <a href="#" class="o-carousel-controls__arrow o-carousel-arrow o-carousel-arrow_next js-jcarousel-next">&rsaquo;</a>
                             </div>
+
                         </div>
 
                     </div>
@@ -439,10 +613,10 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-xs-5">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
 
-                        <div class="auditory-register__form">
-                            <form action="#" class="auditory-form">
+                        <div class="auditory-register__form" id="sectionRegister">
+                            <form action="#" class="auditory-form auditory-form_full js-contacts-form">
                                 <h2>Записаться на семинар</h2>
                                 <fieldset>
                                     <div class="auditory-form__group">
@@ -458,31 +632,89 @@
                                         <input type="email" placeholder="Ваш email адрес">
                                     </div>
                                 </fieldset>
+
                                 <div class="auditory-form__group">
                                     <button class="btn">Записаться</button>
                                 </div>
+
+                                <span class="o-icon-close js-modal-close">x</span>
                             </form>
                         </div>
 
                     </div>
 
-                    <div class="col-xs-7">
-                        <img src="images/logos.png" alt="Logos" class="auditory-register__logos">
+                    <div class="col-xs-12 visible-xs">
+                        <div class="register-block-mobile">
+                            <h2>Записаться на семинар</h2>
+
+                            <div class="register-block-mobile__info">
+                                Стоимость участия
+                            </div>
+
+                            <div class="register-block-mobile__price">
+                                800 руб.
+                            </div>
+
+                            <div class="register-block-mobile__link">
+                                <a href="#" class="btn js-form-link">Оплатить место</a>
+                            </div>
+
+                            <div class="register-block-mobile__bonus">
+                                <h2>Бонус при регистрации</h2>
+
+                                <div class="register-block-mobile__descr">
+                                    Мини-технология  Антона Сочешкова
+                                    «Пять шагов к вашим финансовым целям»
+                                </div>
+                                <div class="register-block-mobile__img">
+                                    <img src="images/register-mobile-img.png" alt="Image" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 visible-xs">
+
+                        <form action="#" class="auditory-form auditory-form_phone">
+                            <h2>Остались вопросы?</h2>
+                            <div class="auditory-form__descr">
+                                Оставьте свой номер телефона
+                                и наш менедеджер свяжется с вами
+                                для проведения бесплатной консультации
+                            </div>
+                            <fieldset>
+                                <div class="auditory-form__group">
+                                    <input type="text" placeholder="Телефон" required class="js-phone-masked">
+                                    <span class="auditory-form__required-sign">*</span>
+                                </div>
+                            </fieldset>
+
+                            <div class="auditory-form__group">
+                                <button class="btn btn_lite">КОНСУЛЬТАЦИЯ</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7">
+                        <div class="auditory-register__partners" id="sectionPartners">
+                            <img src="images/logos.png" alt="Logos" class="auditory-register__logos">
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div class="auditory-contacts">
+        <div class="auditory-contacts" id="sectionContacts">
 
             <div class="container">
 
                 <h2>Как нас найти?</h2>
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="auditory-contacts__card contacts-card">
+                    <div class="col-xs-12 col-sm-4 c-cont-card">
+                        <div class="auditory-contacts__card contacts-card js-contacts-card">
                             <div class="contacts-card__photo">
                                 <img src="images/address-photo.png" alt="Contacts" />
                             </div>
@@ -502,8 +734,8 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-12 col-sm-8">
-                        <div class="auditory-contacts__map contacts-map">
+                    <div class="col-xs-12 col-sm-8 c-cont-map">
+                        <div class="auditory-contacts__map contacts-map js-contacts-map">
                             <iframe src="https://yandex.ru/map-widget/v1/-/C6epUFlG" width="100%" height="400" frameborder="0" class="contacts-map__map"></iframe>
                         </div>
                     </div>
@@ -518,20 +750,26 @@
 
                 <div class="row">
 
-                    <div class="col-xs-12 col-sm-4">
+                    <div class="col-xs-12 col-sm-12 col-md-4 hidden-xs hidden-sm">
                         <div class="auditory-footer__contacts c-contacts">
                             <a href="mailto:arenda.almt@a-1.ru" class="c-contacts__link c-contacts__link_mail">arenda.almt@a-1.ru</a>
                             <a href="tel:+78001002939" class="c-contacts__link c-contacts__link_phone">8 800 100 29 39</a>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-4 text-center">
+                    <div class="col-xs-12 col-sm-12 col-md-4 text-center">
                         <a href="/" class="auditory-footer__logo">
                             <img src="images/auditory1-logo.png" alt="Аудитория №1">
                         </a>
                     </div>
 
-                    <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+                    <div class="col-xs-12 col-sm-12 col-md-4 visible-xs visible-sm">
+                        <div class="auditory-footer__contacts c-contacts">
+                            <a href="tel:+78001002939" class="c-contacts__link c-contacts__link_phone">8 800 100 29 39</a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1">
                         <div class="auditory-footer__social c-social">
                             <div class="c-social__title">Мы в социальных сетях</div>
                             <a href="#" class="c-social__icon c-social__icon_fb">Facebook</a>
@@ -545,9 +783,12 @@
 
         </footer>
 
-        <div class="video-cont js-video-modal">
-            <iframe width="100%" height="600" src="https://www.youtube.com/embed/9ExFsLH-O-o?list=RDAo1VOMrEuS4" frameborder="0" allowfullscreen></iframe>
+        <div class="o-modal o-modal_video js-video-modal">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9ExFsLH-O-o?list=RDAo1VOMrEuS4" frameborder="0" allowfullscreen></iframe>
+            <span class="o-modal__close o-icon-close js-modal-close">x</span>
         </div>
+
+        <div class="o-overlay js-overlay"></div>
 
         <script src="scripts/vendor.min.js"></script>
 
