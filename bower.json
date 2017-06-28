@@ -4,10 +4,10 @@
   "dependencies": {
     "normalize-css": "normalize.css#^3.0.3",
     "bootstrap-sass": "^3.3.6",
-    "respond": "^1.4.2",
     "jquery": "^3.2.1",
     "jcarousel": "^0.3.5",
-    "inputmask": "^3.3.7"
+    "inputmask": "^3.3.7",
+    "flexslider": "^2.6.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -17,6 +17,11 @@
     "inputmask": {
       "main": [
         "./dist/min/jquery.inputmask.bundle.min.js"
+      ]
+    },
+    "flexslider": {
+      "main": [
+        "./jquery.flexslider-min.js"
       ]
     }
   }

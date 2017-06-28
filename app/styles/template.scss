@@ -1171,16 +1171,25 @@ textarea {
 }
 
 .auditory-testimon-wr {
+    margin-left: -15px;
+    margin-right: -15px;
     position: relative;
     text-align: center;
 
+    overflow: hidden;
+
     @media (min-width: $breakpoint-1) {
+        height: 350px;
+        margin-left: 0;
+        margin-right: 0;
         padding: 0 60px;
 
         .o-carousel-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+
+            display: none;
 
             &_prev {
                 left: 0;
@@ -1194,13 +1203,14 @@ textarea {
 }
 
 .auditory-testimon {
-    margin: 0 -15px 15px;
-    overflow: hidden;
-    position: relative;
+    margin: 0 0 15px;
+    border: 0;
 
-    &__list {
-        width: 20000em;
-        position: relative;
+    @media (min-width: $breakpoint-3) {
+        max-width: 400px;
+        width: 400px;
+        margin: 0 auto;
+        position: static !important;
     }
 
     &__item {
@@ -1210,26 +1220,95 @@ textarea {
         z-index: 5;
 
         @media (min-width: $breakpoint-3) {
-            &.is-visible {
-                opacity: 1;
+
+            &.flex-active-slide {
+                //margin: 0 -185px!important;
+                z-index: 6;
             }
 
-            &.is-last {
-                transform: translateX(-75%);
-                z-index: 4;
-            }
+        }
 
-            &.is-next {
-                transform: translateX(-75%);
-                z-index: 4;
-            }
+    }
 
-            &.is-prev {
-                transform: translateX(75%);
-                z-index: 4;
+    .flex-direction-nav {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .flex-nav-prev,
+    .flex-nav-next {
+        margin: 0;
+        padding: 0 20px;
+        list-style: none;
+        display: inline-block;
+    }
+
+    .flex-viewport {
+
+        @media (min-width: $breakpoint-3) {
+            overflow: visible!important;
+        }
+    }
+
+
+    .flex-prev,
+    .flex-next {
+        width: 33px;
+        height: 44px;
+        display: inline-block;
+        text-align: left;
+        position: relative;
+        vertical-align: middle;
+        text-indent: -9999px;
+        cursor: pointer;
+        opacity: 1;
+        background: transparent url(../images/icons-arrows-mobile.png) no-repeat 0 0;
+    }
+
+    @media (min-width: $breakpoint-3) {
+        .flex-prev,
+        .flex-next {
+            height: 29px;
+            position: absolute;
+            top: 50%;
+            margin-top: -16px;
+            background: transparent url(../images/icons-arrows.png) no-repeat 0 0;
+        }
+
+        .flex-prev {
+            left: 0;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+
+        .flex-next {
+            right: 0;
+
+            &:hover {
+                opacity: .8;
             }
         }
     }
+
+    .flex-prev {
+        background-position: 0 0;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    .flex-next {
+        background-position: 100% 0;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
 }
 
 .testimonial {
@@ -1238,40 +1317,74 @@ textarea {
     margin: 15px 15px 20px;
     text-align: left;
     overflow: hidden;
+    transition: all .5s;
 
     &:hover {
         //height: auto;
     }
 
-    @media (min-width: $breakpoint-1) {
+    @media (min-width: $breakpoint-3) {
         height: 250px;
+        margin: 15px 60px 20px;
+
+        .flex-active-slide & {
+            margin-left: -125px;
+            margin-right: -125px;
+        }
 
         > * {
             opacity: .3;
 
-            .is-first & {
+            .flex-active-slide & {
                 opacity: 1;
             }
         }
     }
 
     &__top {
-        width: 100%;
-        display: table;
         margin-bottom: 16px;
+        text-align: center;
+
+        @media (min-width: $breakpoint-1) {
+            width: 100%;
+            display: table;
+            text-align: left;
+        }
     }
 
     &__avatar {
-        width: 10%;
-        display: table-cell;
-        vertical-align: middle;
+        margin-bottom: 16px;
+
+        @media (min-width: $breakpoint-1) {
+            width: 10%;
+            min-width: 60px;
+            display: table-cell;
+            vertical-align: top;
+
+            .flex-active-slide & {
+                vertical-align: middle;
+            }
+        }
+
+        img {
+            max-width: 60px;
+            max-height: 60px;
+        }
     }
 
     &__info {
-        width: 90%;
-        padding-left: 20px;
-        display: table-cell;
-        vertical-align: middle;
+        margin-bottom: 16px;
+
+        @media (min-width: $breakpoint-1) {
+            width: 90%;
+            padding-left: 20px;
+            display: table-cell;
+            vertical-align: top;
+
+            .flex-active-slide & {
+                vertical-align: middle;
+            }
+        }
     }
 
     &__name {
@@ -1325,16 +1438,24 @@ textarea {
         content: '';
         height: 500px;
         position: absolute;
-        bottom: -200px;
+        bottom: -250px;
         left: 0;
         right: 0;
         background: transparent url(../images/bg-contacts.png) no-repeat 50% 0;
+
+        @media (min-width: $breakpoint-1) {
+            bottom: -150px;
+        }
     }
 }
 
 .auditory-tarifs-wr {
-    padding: 40px 0 200px;
+    padding: 0 0 150px;
     position: relative;
+
+    @media (min-width: $breakpoint-1) {
+        padding: 40px 0 200px;
+    }
 
 }
 
@@ -1474,12 +1595,22 @@ textarea {
     position: relative;
     border-bottom: 1px solid #e0e0e0;
 
+    @media (min-width: $breakpoint-1) {
+        padding: 0 0 60px;
+    }
+
     &__form { // .auditory-form
-        margin-top: -100px;
+
+        @media (min-width: $breakpoint-1) {
+            margin-top: -100px;
+        }
     }
 
     &__partners {
-        margin-top: -100px;
+
+        @media (min-width: $breakpoint-1) {
+            margin-top: -100px;
+        }
     }
 
     &__logos {
@@ -1569,7 +1700,7 @@ textarea {
 
         @media (min-width: $breakpoint-1) {
             width: 500px;
-            top: 100px;
+            top: 60px;
             margin-left: -250px;
             z-index: 9;
         }

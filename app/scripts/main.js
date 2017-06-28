@@ -99,49 +99,18 @@ $(document).ready(function(){
         var testimonials = $('.js-testimonials-carousel');
 
         if(testimonials.length) {
-            var testimItem = '.auditory-testimon__item',
-                prev = testimonials.siblings('.js-jcarousel-prev'),
-                next = testimonials.siblings('.js-jcarousel-next');
+            var testimItem = '.auditory-testimon__list .auditory-testimon__item';
 
-            testimonials.on('jcarousel:reload jcarousel:create', function () {
-                var carousel = $(this),
-                    width = carousel.innerWidth();
-
-                if (width >= 900) {
-                    width = width - (width / 3);
-                }
-
-                carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
-            })
-                .jcarousel({
-                    wrap: 'circular',
-                    center: true
-                });
-
-            testimonials.on('jcarousel:firstin', testimItem, function() {
-                $(this).addClass('is-first').removeClass('is-next').removeClass('is-prev');
-                $(this).prev().addClass('is-prev');
+            testimonials.flexslider({
+                selector: testimItem,
+                animation: 'slide',
+                controlNav: false,
+                prevText: '&lsaquo;',
+                nextText: '&rsaquo;',
+                slideshowSpeed: 5000,
+                animationSpeed: 300
             });
 
-            testimonials.on('jcarousel:firstout', testimItem, function() {
-                $(this).removeClass('is-first');
-            });
-
-            testimonials.on('jcarousel:lastin', testimItem, function() {
-                $(this).addClass('is-last').removeClass('is-prev');
-            });
-
-            testimonials.on('jcarousel:lastout', testimItem, function() {
-                $(this).removeClass('is-last');
-            });
-
-            prev.jcarouselControl({
-                target: '-=1'
-            });
-
-            next.jcarouselControl({
-                target: '+=1'
-            });
         }
     }
 
@@ -225,6 +194,26 @@ $(document).ready(function(){
                 });
             });
         }
+    }
+
+    function initSlideLink() {
+        var cont = $('.site-menu, .site-menu-mobile'),
+            link = cont.find('a[href^="#"]');
+
+        if(link.length) {
+            link.each(function() {
+                $(this).on('click', function(e) {
+                    var targetId = $(this).attr('href'),
+                        target = $(targetId);
+
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    e.preventDefault();
+                });
+            });
+        }
+
     }
 
     function initMapHeight() {
@@ -311,6 +300,7 @@ $(document).ready(function(){
     initTestimonialsCarousel();
     initTarifsCarousel();
     initMenu();
+    initSlideLink();
     initMapHeight();
     initModalForm();
     initExpandBlock();
