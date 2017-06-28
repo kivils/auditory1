@@ -39,22 +39,51 @@ $(document).ready(function(){
         var program = $('.js-program-carousel');
 
         if(program.length) {
-            var prev = program.siblings('.js-carousel-controls').find('.js-jcarousel-prev'),
-                next = program.siblings('.js-carousel-controls').find('.js-jcarousel-next');
+            var controls = program.siblings('.js-carousel-controls'),
+                programItem = '.auditory-program__item',
+                prev = controls.find('.js-jcarousel-prev'),
+                next = controls.find('.js-jcarousel-next'),
+                countContainer = controls.find('.js-carousel-items-count'),
+                itemNumContainer = controls.find('.js-acrousel-item-num');
+
+            $(programItem).each(function(index) {
+                $(this).attr('data-index', index + 1);
+            });
 
             program.on('jcarousel:reload jcarousel:create', function () {
                 var carousel = $(this),
-                    width = carousel.innerWidth();
+                    width = carousel.innerWidth(),
+                    countItems = carousel.jcarousel('items').length;
+
+                if(countItems === 2) {
+                    program.parents('.auditory-program-wr').addClass('is-items2');
+                }
 
                 if (width >= 600) {
                     width = width / 2;
                 }
 
+                itemNumContainer.text(program.find('.auditory-program__item.is-visible').first().attr('data-index'));
+                countContainer.text(countItems);
                 carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
             })
                 .jcarousel({
-                    wrap: 'circular'
+                    wrap: 'circular',
+                    transitions: false,
+                    vertical: false
                 });
+
+            program.on('jcarousel:visiblein', programItem, function() {
+                $(this).addClass('is-visible');
+            });
+
+            program.on('jcarousel:visibleout', programItem, function() {
+                $(this).removeClass('is-visible');
+            });
+
+            program.on('jcarousel:scrollend', function() {
+                itemNumContainer.text(program.find('.auditory-program__item.is-visible').first().attr('data-index'));
+            });
 
             prev.jcarouselControl({
                     target: '-=1'
@@ -70,22 +99,41 @@ $(document).ready(function(){
         var testimonials = $('.js-testimonials-carousel');
 
         if(testimonials.length) {
-            var prev = testimonials.siblings('.js-jcarousel-prev'),
+            var testimItem = '.auditory-testimon__item',
+                prev = testimonials.siblings('.js-jcarousel-prev'),
                 next = testimonials.siblings('.js-jcarousel-next');
 
             testimonials.on('jcarousel:reload jcarousel:create', function () {
                 var carousel = $(this),
                     width = carousel.innerWidth();
 
-                if (width >= 600) {
-                    width = width / 2;
+                if (width >= 900) {
+                    width = width - (width / 3);
                 }
 
                 carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
             })
                 .jcarousel({
-                    wrap: 'circular'
+                    wrap: 'circular',
+                    center: true
                 });
+
+            testimonials.on('jcarousel:firstin', testimItem, function() {
+                $(this).addClass('is-first').removeClass('is-next').removeClass('is-prev');
+                $(this).prev().addClass('is-prev');
+            });
+
+            testimonials.on('jcarousel:firstout', testimItem, function() {
+                $(this).removeClass('is-first');
+            });
+
+            testimonials.on('jcarousel:lastin', testimItem, function() {
+                $(this).addClass('is-last').removeClass('is-prev');
+            });
+
+            testimonials.on('jcarousel:lastout', testimItem, function() {
+                $(this).removeClass('is-last');
+            });
 
             prev.jcarouselControl({
                 target: '-=1'
@@ -101,22 +149,50 @@ $(document).ready(function(){
         var tarifs = $('.js-tarifs-carousel');
 
         if(tarifs.length) {
-            var prev = tarifs.siblings('.js-carousel-controls').find('.js-jcarousel-prev'),
-                next = tarifs.siblings('.js-carousel-controls').find('.js-jcarousel-next');
+            var controls = tarifs.siblings('.js-carousel-controls'),
+                tarifItem = '.auditory-tarif__item',
+                prev = tarifs.siblings('.js-carousel-controls').find('.js-jcarousel-prev'),
+                next = tarifs.siblings('.js-carousel-controls').find('.js-jcarousel-next'),
+                countContainer = controls.find('.js-carousel-items-count'),
+                itemNumContainer = controls.find('.js-acrousel-item-num');
+
+
+            $(tarifItem).each(function(index) {
+                $(this).attr('data-index', index + 1);
+            });
 
             tarifs.on('jcarousel:reload jcarousel:create', function () {
                 var carousel = $(this),
-                    width = carousel.innerWidth();
+                    width = carousel.innerWidth(),
+                    countItems = carousel.jcarousel('items').length;
+
+                if(countItems === 2) {
+                    tarifs.parents('.auditory-tarifs-wr').addClass('is-items2');
+                }
 
                 if (width >= 600) {
                     width = width / 2;
                 }
 
+                itemNumContainer.text(tarifs.find('.auditory-tarif__item.is-visible').first().attr('data-index'));
+                countContainer.text(countItems);
                 carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
             })
                 .jcarousel({
                     wrap: 'circular'
                 });
+
+            tarifs.on('jcarousel:visiblein', tarifItem, function() {
+                $(this).addClass('is-visible');
+            });
+
+            tarifs.on('jcarousel:visibleout', tarifItem, function() {
+                $(this).removeClass('is-visible');
+            });
+
+            tarifs.on('jcarousel:scrollend', function() {
+                itemNumContainer.text(tarifs.find('.auditory-tarif__item.is-visible').first().attr('data-index'));
+            });
 
             prev.jcarouselControl({
                 target: '-=1'
@@ -152,14 +228,14 @@ $(document).ready(function(){
     }
 
     function initMapHeight() {
-        //var contactsMapWr = $('.js-contacts-map'),
-        //    contactsCard = $('.js-contacts-card');
-        //
-        //if(contactsCard.length && contactsMapWr.length) {
-        //    var height = contactsCard.outerHeight();
-        //
-        //    contactsMapWr.css({'height': height + 'px'});
-        //}
+        var contactsMapWr = $('.js-contacts-map'),
+            contactsCard = $('.js-contacts-card');
+
+        if(contactsCard.length && contactsMapWr.length) {
+            var height = contactsCard.outerHeight();
+
+            contactsMapWr.css({'height': height + 'px'});
+        }
     }
 
     function initModalForm() {
