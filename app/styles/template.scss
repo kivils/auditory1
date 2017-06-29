@@ -482,6 +482,8 @@ textarea {
         bottom: 0;
         right: 0;
         width: auto;
+        max-width: 100%;
+        height: auto;
         max-height: 500px;
 
         @media (min-width: $breakpoint-1) {
