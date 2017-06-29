@@ -4,6 +4,9 @@ $breakpoint-2: 992px;
 $breakpoint-3: 1200px;
 $breakpoint-4: 1400px;
 
+$breakpoint-height-1: 420px;
+$breakpoint-height-2: 500px;
+
 
 $color-base: #000;
 $color-title: #0c0c0c;
@@ -418,12 +421,9 @@ textarea {
         opacity: .8;
     }
 
-    @media (min-width: $breakpoint-1) {
-        height: 29px;
-        margin: 0;
-        background-image: url(../images/icons-arrows.png);
+    .is-items2 & {
 
-        .is-items2 & {
+        @media (min-width: 617px) {
             background-position-y: 100%;
 
             &:hover {
@@ -431,6 +431,12 @@ textarea {
                 cursor: default;
             }
         }
+    }
+
+    @media (min-width: $breakpoint-1) {
+        height: 29px;
+        margin: 0;
+        background-image: url(../images/icons-arrows.png);
     }
 }
 
@@ -446,9 +452,17 @@ textarea {
 
 //
 .auditory-face {
-    min-height: 580px;
+    min-height: 400px;
     position: relative;
     background: #fff;
+
+    @media (min-height: $breakpoint-height-1) {
+        min-height: 500px;
+    }
+
+    @media (min-height: $breakpoint-height-2) {
+        min-height: 580px;
+    }
 
     @media (min-width: $breakpoint-1) {
         min-height: 620px;
@@ -456,8 +470,16 @@ textarea {
     }
 
     .container {
-        min-height: 580px;
+        min-height: 400px;
         position: relative;
+
+        @media (min-height: $breakpoint-height-1) {
+            min-height: 500px;
+        }
+
+        @media (min-height: $breakpoint-height-2) {
+            min-height: 580px;
+        }
 
         @media (min-width: $breakpoint-1) {
             min-height: 620px;
@@ -484,7 +506,16 @@ textarea {
         width: auto;
         max-width: 100%;
         height: auto;
-        max-height: 500px;
+        max-height: 340px;
+
+
+        @media (min-height: $breakpoint-height-1) {
+            max-height: 440px;
+        }
+
+        @media (min-height: $breakpoint-height-2) {
+            max-height: 500px;
+        }
 
         @media (min-width: $breakpoint-1) {
             display: none;
@@ -891,8 +922,16 @@ textarea {
 
 //
 .auditory-main {
-    padding: 170px 0 50px;
+    padding: 35px 0 50px;
     position: relative;
+
+    @media (min-height: $breakpoint-height-1) {
+        padding-top: 130px;
+    }
+
+    @media (min-height: $breakpoint-height-2) {
+        padding-top: 170px;
+    }
 
     @media (min-width: $breakpoint-1) {
         padding: 40px 0 120px;
@@ -1617,8 +1656,12 @@ textarea {
 
     &__logos {
         max-width: 100%;
-        margin: 120px auto 20px;
+        margin: 20px auto 0;
         display: block;
+
+        @media (min-width: $breakpoint-1) {
+            margin: 120px auto 20px;
+        }
     }
 }
 
@@ -1641,6 +1684,7 @@ textarea {
 
     &_phone {
         text-align: center;
+        border-color: #e6e6e6;
     }
 
     fieldset {
@@ -1716,16 +1760,20 @@ textarea {
 
 // Contacts
 .auditory-contacts {
-    padding: 40px 0;
+    padding: 40px 0 0;
     position: relative;
+
+    @media (min-width: $breakpoint-1) {
+        padding-bottom: 40px;
+    }
 
     &__card { // .contacts-card
 
     }
     
     &__map { // .contacts-map
-        max-height: 250px;
-        margin: -40px -15px 40px;
+        max-height: 300px;
+        margin: -40px -15px 0;
         position: relative;
         z-index: 4;
 
@@ -1733,6 +1781,7 @@ textarea {
             height: 400px;
             max-height: none;
             margin-top: 0;
+            margin-bottom: 40px;
         }
     }
 
@@ -1763,10 +1812,15 @@ textarea {
 
     &__photo {
         margin: -20px -20px 20px;
+        text-align: center;
         border-radius: 3px 3px 0 0;
 
+        @media (min-width: 450px) {
+            margin-top: 0;
+        }
+
         @media (min-width: $breakpoint-1) {
-            margin: -20px -20px 20px;
+            margin-top: -20px;
         }
 
         @media (min-width: $breakpoint-2) {

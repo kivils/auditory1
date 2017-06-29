@@ -71,7 +71,8 @@ $(document).ready(function(){
                     wrap: 'circular',
                     transitions: false,
                     vertical: false
-                });
+                })
+                .jcarouselSwipe();
 
             program.on('jcarousel:visiblein', programItem, function() {
                 $(this).addClass('is-visible');
@@ -149,7 +150,8 @@ $(document).ready(function(){
             })
                 .jcarousel({
                     wrap: 'circular'
-                });
+                })
+                .jcarouselSwipe();
 
             tarifs.on('jcarousel:visiblein', tarifItem, function() {
                 $(this).addClass('is-visible');
