@@ -451,6 +451,98 @@ textarea {
 }
 
 //
+.auditory-header-fixed {
+    padding: 25px 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 8;
+
+    @media (min-width: $breakpoint-3) {
+
+        &.is-visible {
+            display: block;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .95;
+        background: #fff;
+    }
+
+    &__logo {
+        min-width: 150px;
+        display: inline-block;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__menu { // .site-menu-fixed
+        text-align: center;
+    }
+
+    .c-contacts {
+        min-width: 180px;
+        text-align: right;
+
+        &__link {
+            font-size: 17px;
+            font-weight: 700;
+            color: $color-link;
+        }
+
+        &__link:before {
+            width: 35px;
+            height: 35px;
+            border: 1px solid $color-lite;
+            border-radius: 50%;
+            background-image: url(../images/icon-phone2.png);
+            background-size: 15px 15px;
+        }
+    }
+}
+
+.site-menu-fixed {
+    margin: 0;
+    padding: 0;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        list-style: none;
+        margin: 0;
+        padding: 0 9px;
+        display: inline-block;
+    }
+
+    &__link {
+        font-family: "Roboto", Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 19px;
+        color: #4f4f4f;
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+
+
+//
 .auditory-face {
     min-height: 400px;
     position: relative;

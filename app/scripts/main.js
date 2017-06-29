@@ -199,23 +199,52 @@ $(document).ready(function(){
     }
 
     function initSlideLink() {
-        var cont = $('.site-menu, .site-menu-mobile'),
+        var cont = $('.site-menu, .site-menu-mobile, .site-menu-fixed'),
             link = cont.find('a[href^="#"]');
 
         if(link.length) {
             link.each(function() {
+
                 $(this).on('click', function(e) {
                     var targetId = $(this).attr('href'),
-                        target = $(targetId);
+                        target = $(targetId),
+                        fixedHeader = $('.js-header-fixed'),
+                        fixedHeaderHeight;
+
+                    if(fixedHeader.length) {
+                        if($(window).width() <= 1200) {
+                            fixedHeaderHeight = 0;
+                        }
+                        else {
+                            fixedHeaderHeight = fixedHeader.outerHeight();
+                        }
+                    }
 
                     $('html, body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top - fixedHeaderHeight
                     }, 1000);
+
+                    $('.auditory-menu-mobile').removeClass('is-opened');
+
                     e.preventDefault();
                 });
             });
         }
 
+    }
+
+    function initFixedHeader() {
+        var fixedHeader = $('.js-header-fixed'),
+            secondSlide = $('#sectionInfo');
+
+        if(fixedHeader.length) {
+            if($(window).scrollTop() > secondSlide.offset().top) {
+                fixedHeader.addClass('is-visible');
+            }
+            else {
+                fixedHeader.removeClass('is-visible');
+            }
+        }
     }
 
     function initMapHeight() {
@@ -302,6 +331,7 @@ $(document).ready(function(){
     initTestimonialsCarousel();
     initTarifsCarousel();
     initMenu();
+    initFixedHeader();
     initSlideLink();
     initMapHeight();
     initModalForm();
@@ -310,6 +340,11 @@ $(document).ready(function(){
 
     $(window).resize(function() {
         initMapHeight();
+        initFixedHeader();
+    });
+
+    $(window).scroll(function() {
+        initFixedHeader();
     });
 
 });
