@@ -1452,10 +1452,6 @@ textarea {
     overflow: hidden;
     transition: all .5s;
 
-    &:hover {
-        //height: auto;
-    }
-
     @media (min-width: $breakpoint-3) {
         height: 250px;
         margin: 15px 60px 20px;
@@ -1507,6 +1503,7 @@ textarea {
 
     &__info {
         margin-bottom: 16px;
+        word-break: break-all;
 
         @media (min-width: $breakpoint-1) {
             width: 90%;
