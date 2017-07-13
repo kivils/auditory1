@@ -1,25 +1,54 @@
-# Аудитория №1
+# Auditory в„–1
 
-## Как установить проект на своей машине
+Landing page for Auditory 1.
 
-npm install
-bower install
+- Adaptive layout
 
-## Требования
+- Sass (Bootstrap.scss - mixin for grid system)
 
-- node.js + npm
-- Ruby
-- bower глобально
+- jQuery
 
-## Процесс разработки
 
-- Рабочая папка - /app
-- Папка для продакшена - /dist
-- gulpfile.babel.js - задачи для атвоматизации работы
-- В командной строке:
-    gulp serve
-    - запускает сервер, следит за изменениями файлов в app и при изменении файлоа автоматически перезагружает сайт во всех открытых браузерах. Следит за файлами html, scss, js;
-    gulp
-    - собирает проект для продакшена в папку /dist - конкатенация, минификация и т.п.
+## Tools
 
-- svn:ignore = .idea, .sass-cache, .tmp, bower_components, node_modules
+- Gulp
+
+- BrowserSync
+
+- Babel
+
+
+## Requirements
+
+- nodejs + npm
+
+- Ruby (for sass)
+
+- bower
+
+- gulp
+
+
+## How to install project
+
+``` bush
+$ npm i
+```
+
+``` bush
+$ bower i
+```
+
+
+## How to start develop
+
+``` bush
+$ gulp serve
+```
+
+
+## How to build project
+
+``` bush
+$ gulp build
+```
