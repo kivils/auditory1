@@ -487,6 +487,7 @@ textarea {
   font-size: 17px;
   font-weight: 700;
   color: #57ab27;
+  white-space: nowrap;
 }
 
 .auditory-header-fixed .c-contacts__link:before {
